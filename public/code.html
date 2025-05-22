@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Freedom App Invite</title>
+</head>
+<body>
+  <h2>Enter your phone to get the Freedom App</h2>
+  <input type="tel" id="phone" placeholder="+1..." />
+  <button onclick="submitPhone()">Submit</button>
+  <p id="msg"></p>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR-KEY",
+      authDomain: "YOUR-DOMAIN.firebaseapp.com",
+      projectId: "YOUR-ID",
+      storageBucket: "YOUR-BUCKET.appspot.com",
+      messagingSenderId: "ID",
+      appId: "APP-ID",
+      databaseURL: "https://YOUR-ID.firebaseio.com"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    function submitPhone() {
+      const phone = document.getElementById('phone').value;
+      if (!phone) return alert("Enter phone number");
+
+      db.ref('leads').push({ phone, timestamp: Date.now() });
+      document.getElementById('msg').innerText = "Thanks! Sending app link...";
+
+      // Optionally: redirect or send SMS via backend
+      window.location.href = "https://your-dynamic-link.com"; // Replace with Firebase Dynamic Link
+    }
+  </script>
+</body>
+</html>

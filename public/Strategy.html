@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Freedom App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<style>
+   li.override-feature::before {
+    content: none !important;
+  }
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+h2 {
+  color: #222;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+.example {
+  margin-bottom: 30px;
+}
+.strategy {
+  font-style: italic;
+  color: #555;
+}
+</style>
+
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+
+</head>
+
+<body>
+<!-- partial:index.partial.html -->
+<!-- 
+
+INSTRUCTIONS:
+- Using html and css, create the design we shared with you on Figma.
+
+WHAT WE EXPECT FROM YOU:
+- Your code should be scalable and maintainable.
+- Your code should be component-based.
+- Your code should support all modern browsers.
+- You are completely free to use the new css features.
+-->
+
+<!-- YOUR HTML STARTS HERE -->
+
+<section class="plans__container">
+  <div class="plans"> 
+    <div class="plansHero">
+      <h1 class="plansHero__title">Strategy  </h1>
+
+      <p class="plansHero__subtitle_left"> I’m not sure “Freedom” is the best name. It’s not very catchy or easy to build a community around—like “Amazonians” for Amazon. “Freedomers” doesn’t really work.
+        Since we’ll have standout features like alerts (similar to Waze), a strong name that’s simple and natural to say could really help it stick.
+        What do you think? </p>
+
+      <br><br>
+        <p style="color: blue;" class="plansHero__subtitle_left"> > Now I am thinking of name : Free Birds, & slowly people will start calling the 
+          drivers as Bird,   Just like people say ‘Ubering,’ even when they are lyfting, ( lol ) younger users could say ‘I’m birding’ or ‘Let me call a bird.’, Or my bird will be here soon. 
+          
+          >I am getting a bird. Just get a bird. <br>  Bird signifies freedom (from uber). Emotional Resonance: The name taps into a universal desire for liberation, especially for drivers frustrated with Uber/Lyft’s high commissions and rigid systems.
+        & its uplifting.   
+        <br><br>
+     > The best part is I was looking for a name that is short that can be used in the cars (govt require it), in this case we can use just the symbol bird.  
+    
+      <br><br>
+        >But there is another name registered with Bird — Ride Electric.  We'll figure it out. 
+
+        <br><br>
+        
+        > I spoke to a few riders—they liked the name “Fee Bird” or “Free Birds. or  "Happy Birds"  OR  Birdie ( ppl say it sounds cute) ” Just wondering, should it be “Free Bird” or “Free Birds”?
+    </p>
+    <br><br><br><br>
+      <p class="plansHero__subtitle_left"> >There are many drivers in other states/cities looking for a service like this.  </p>
+      <br><br>
+      <p class="plansHero__subtitle_left"> >I think our strategy should be to get them ( riders + drivers ) to sign up early, so when we launch, we already have 200 drivers or 100 riders ready to go.</p>
+      <br><br>
+      <p class="plansHero__subtitle_left"> >Our focus should be on building a strong foundation for success, not just short-term revenue. </p>
+      <br><br>
+      
+      <p class="plansHero__subtitle_left">
+       >  I was starting to think DC might be too saturated and considered launching in NY instead. But a rider pointed out that DC Metro riders could be a great target audience—they often use the Metro, Uber, or Empower daily. Many of them aren’t even aware of Empower, likely because it doesn’t market much. A strong slogan like “Did you know your Uber driver only gets 50% of what you pay?” could really resonate here, especially since people in DC and NY often like supporting local drivers and small businesses.
+      </p>
+      <br><br>
+      <p class="plansHero__subtitle_left">
+      >  I know there are many Facebook groups where moms connect—we should definitely tap into that market. The question is, what’s the right incentive to offer them?
+      </p>
+      <br><br>
+      <p class="plansHero__subtitle_left">
+        > I believe community involvement could drive a lot of referrals—I’m just not sure how to tap into it effectively.
+      </p>
+      <br><br> <br>
+
+      <p class="plansHero__subtitle_left">
+       > We need attract riders (& drivers ) before launch—otherwise, drivers won’t be motivated, especially if there’s no demand to justify the cost of commercial insurance.  
+      </p>
+
+      <p class="plansHero__subtitle_left"> Let’s think about how apps like these went viral and apply similar ideas.    
+      </p>
+
+      <br>
+      <p class="plansHero__subtitle_left">
+        > I’m not fully sure about <b>pricing</b> yet. We could do $1 per mile or minute, but downtown rates might be higher due to traffic and demand. For now, we can say we charge 10% less than Uber. When the VO arrives, they can check the Uber price, and we’ll honor it with a 10% discount—no questions asked. We trust our VOs.  
+      </p>
+      <br><br>
+
+      <p class="plansHero__subtitle_left">   Maybe we should consider <b> different pricing for different areas.</b> 
+        
+        In DC, Empower has taken over by offering super low prices—even though it’s technically illegal and doesn’t offer insurance. 
+        
+        Most people don’t realize that, and it puts us at a disadvantage unless we can match their pricing.
+         </p>
+        <br><br>
+        
+        
+      <p style="color:blue" class="plansHero__subtitle_left"> 
+       > Let’s be mindful not to give all incentives upfront—this keeps VOs motivated and allows room for future rewards. 
+       <br><br>
+       Also, we need to ensure our system works well for both VOs and riders from the start, since we won’t be able to change it easily later.
+
+       
+      </p>
+
+
+      <p style="" class="plansHero__subtitle_left">  
+        <br><br>
+       > In my research I found the Empower platform could improve its pricing strategy. For example, an Uber ride from Silver Spring, MD to Ronald Reagan Airport (10mi) costs around $40, but Empower charges only $25. While the owner claims to be driver-friendly, it seems like he’s prioritizing customer satisfaction over the drivers. As a result, drivers are earning very little despite working long hours to make just $200.
+        <br><br>
+Somebody told me, the best strategy for drivers is to stay within the northwest part of DC, where you earn around $10 for every 2 miles. However, I feel Empower’s pricing model, technology, is outdated, and the owner isn’t keeping up with changes in the market which is great for us to enter into the market.
+
+<br><br>
+If Empower doesn’t make this change, we could take that approach, but the challenge is that customers may still flock to Empower because of its low prices. I think we can start by offering a lower fee for our drivers and then gradually increase our prices to about 10% less than what Uber charges. Once drivers see they’re getting paid more here with our pay-as-you-go model, they will likely prefer our platform.
+
+
+Fewer drivers will pick up customers due to low pay, leading to poor service. As a result, customers will turn to our service, which is still 10% cheaper than Uber.
+
+
+
+      <br>
+      
+      <br>
+      
+    </div>
+
+  
+  </div>
+
+  
+</section>
+<!-- partial -->
+
+
+<img src="img/priceana.png" alt="" style="max-width: 100%; height: auto;">
+
+
+
+
+
+<h2>✅ What You’re Doing Well  ( jay - I got it analyzed ) </h2>
+  <ul>
+    <li>Strong driver-first messaging (fee reductions, tip transparency)</li>
+    <li>Clear rider discounts and reward structure</li>
+    <li>Smart use of gamified referral leaderboard</li>
+    <li>Use of minimum user count to unlock city launches, building anticipation</li>
+  </ul>
+
+  <hr>
+
+  <h2>🔧 Suggestions to Strengthen Your Viral Strategy</h2>
+
+  <h3>1. Launch with Community Champions (Ambassadors)</h3>
+  <ul>
+    <li>Recruit driver and rider ambassadors in each city.</li>
+    <li>Offer perks (swag, waived fees, exclusive access) in exchange for helping onboard others.</li>
+    <li>Use tools like WhatsApp/Telegram groups to build local momentum.</li>
+  </ul>
+
+  <h3>2. Create a Waitlist with Visibility</h3>
+  <ul>
+    <li>Like Robinhood,  <u>show users how close they are to getting access. </u></li>
+    <li style="color: blue;" >Refer more to move up” can increase viral spread.</li>
+  </ul>
+
+  <h3>3. Partner with Facebook Groups / Reddit Communities</h3>
+  <ul>
+    <li>Target: rideshare drivers (Uber subreddits, FB groups), moms (for family booking), <span style="color: blue;"> college students.  ( how - they only want cheap/ free </span></li>
+    <li>Offer special codes to group members with public leaderboards.  ( ? How does that help ? ) </li>
+  </ul>
+
+  <h3>4. Time-Limited Referral Multipliers</h3>
+  <ul>
+    <li>For the first 2–4 weeks: “Every referral counts as 2.”</li>
+    <li>Or: “Refer 5 in 5 days, get $25 in ride credits.”</li>
+  </ul>
+
+  <h3>5. Make it About “Taking Back Control”</h3>
+  <ul>
+    <li>Market to drivers as a driver liberation movement (freedom from Uber fees).</li>
+    <li>Use storytelling from real drivers (maybe even TikToks or reels).</li>
+  </ul>
+
+  <h3>6. Launch Campaign Theme</h3>
+  <ul>
+    <li>Example: “Freedom Week” → city-wide countdown to unlock launch.</li>
+    <li>Post daily signup updates to create FOMO. <span style="color: blue;">  ( fear of missing out ) </span> </li>
+  </ul>
+
+  <h3>7. Memes and Shareable Content</h3>
+  <ul>
+    <li>Create a meme/social toolkit for drivers and riders to share.</li>
+    <li>Think funny comparisons of Uber vs Freedom App (fees, tips, etc.).</li>
+  </ul>
+
+  <hr>
+
+  <h2>🎯 Bonus: Sample Launch Funnel for a City</h2>
+  <ol>
+    <li>Pre-launch waitlist (driver/rider)</li>
+    <li>Ambassador kits (invite 10, get jacket or dash cam)</li>
+    <li>Referral countdowns + leaderboard</li>
+    <li>Community-only chat for early updates</li>
+    <li>Limited-time “No Fee First Month” for first 50 rides post-launch</li>
+  </ol>
+
+
+
+<!-- YOUR HTML STARTS HERE -->
+
+
+<!-- partial -->
+
+<h1>Apps That Went Viral Before Launch</h1>
+
+  <div class="example">
+    <h2>1. Clubhouse</h2>
+    <p class="strategy">Strategy: Invite-only access + FOMO marketing</p>
+    <ul>
+      <li>Only available by invite during early days.</li>
+      <li>Used by celebrities and tech influencers to create buzz.</li>
+      <li>People rushed to get in to avoid missing out.</li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <h2>2. Robinhood</h2>
+    <p class="strategy">Strategy: Waitlist with referral bonuses</p>
+    <ul>
+      <li>Users joined a waitlist for early access.</li>
+      <li>Referring friends moved you up the line.</li>
+      <li>Gamified access created millions of early signups.</li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <h2>3. Dropbox</h2>
+    <p class="strategy">Strategy: Referral rewards for cloud space</p>
+    <ul>
+      <li>Users earned extra storage by inviting friends.</li>
+      <li>Resulted in 60%+ increase in early signups.</li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <h2>4. Superhuman</h2>
+    <p class="strategy">Strategy: High-touch onboarding + invite-only</p>
+    <ul>
+      <li>Users had to apply and be approved to join.</li>
+      <li>Created exclusivity and elite perception.</li>
+      <li>Generated strong word-of-mouth and demand.</li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <h2>5. Gmail</h2>
+    <p class="strategy">Strategy: Invite-only beta with limited invites</p>
+    <ul>
+      <li>Each user could invite only a few others.</li>
+      <li>Created a sense of privilege to have an account.</li>
+      <li>Some invites were even sold online.</li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <h2>6. Cash App</h2>
+    <p class="strategy">Strategy: Referral bonuses + influencer tie-ins</p>
+    <ul>
+      <li>Popularized through social media giveaways.</li>
+      <li>Artists and influencers promoted it (e.g. #CashAppFridays).</li>
+      <li>Created social proof and viral buzz.</li>
+    </ul>
+  </div>
+  
+
+  <div class="example">
+    <h2>6. Pinterest (Moms and DIY Creators) </h2>
+    <p class="strategy">Strategy: Referral bonuses + influencer tie-ins</p>
+    <ul>
+      <li>Strategy: Early access given to influential mommy bloggers and DIY enthusiasts.
+        •	Tactic: Exclusive invites to mommy communities who loved crafts, home decor, recipes.
+        •	Result: Moms drove organic viral growth through blogs and social shares.</li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <h2>Nextdoor (Neighborhood Moms & Community Groups)</h2>
+    <p class="strategy">Strategy: Referral bonuses + influencer tie-ins</p>
+    <ul>
+      <li>Strategy: Hyperlocal targeting of tight-knit communities (often moms).
+        •	Tactic: Required verified addresses to join, then encouraged users to invite neighbors.
+        •	Result: Moms and neighborhood leaders became unpaid evangelists.</li>
+    </ul>
+  </div>
+
+
+
+  <div class="example">
+    <h2>6. Cash App</h2>
+    <p class="strategy">Strategy: Referral bonuses + influencer tie-ins</p>
+    <ul>
+      <li>Popularized through social media giveaways.</li>
+      <li>Artists and influencers promoted it (e.g. #CashAppFridays).</li>
+      <li>Created social proof and viral buzz.</li>
+    </ul>
+  </div>
+</body>
+</html>

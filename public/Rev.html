@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Driver Revenue Forecast</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input {
+      padding: 5px;
+      width: 250px;
+    }
+    #revenue {
+      margin-top: 20px;
+      font-size: 1.1em;
+    }
+    canvas {
+      margin-top: 30px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  
+</head>
+<body>
+
+  <h2>Platform Revenue Forecast -  <p style="color:green;">Try playing with values below</p>  </h2>
+
+    <p style="color:red;"> I still need to verify if the calculations are correct. </p>
+  <label>Starting Number of Drivers:</label>
+  <input type="number" id="drivers" value="20">
+
+  <label>New Drivers Added per Day:</label>
+  <input type="number" id="newDriversPerDay" value="2">
+
+  <label>Rides per Driver per Day:</label>
+  <input type="number" id="ridesPerDay" value="20">
+
+  <label>Service Fee (%):</label>
+  <input type="number" id="feePercent" value="2">
+
+  <label>Number of Months to Forecast:</label>
+  <input type="number" id="forecastMonths" value="12">
+
+  <div id="revenue">Monthly Revenue Forecast: $0.00</div>
+
+  <canvas id="revenueChart" width="600" height="300"></canvas>
+
+  <script>
+    const driversInput = document.getElementById('drivers');
+    const newDriversInput = document.getElementById('newDriversPerDay');
+    const ridesInput = document.getElementById('ridesPerDay');
+    const feeInput = document.getElementById('feePercent');
+    const monthsInput = document.getElementById('forecastMonths');
+    const revenueDisplay = document.getElementById('revenue');
+    const ctx = document.getElementById('revenueChart').getContext('2d');
+
+    let chart;
+
+    function formatCurrency(value) {
+      return value.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      });
+    }
+
+    function calculateRevenue() {
+  const initialDrivers = parseFloat(driversInput.value) || 0;
+  const newDriversPerDay = parseFloat(newDriversInput.value) || 0;
+  const rides = parseFloat(ridesInput.value) || 0;
+  const fee = parseFloat(feeInput.value) / 100 || 0;
+  const months = parseInt(monthsInput.value) || 1;
+
+  const data = [];
+  let totalDrivers = initialDrivers;
+
+  for (let i = 0; i < months; i++) {
+    if (i > 0) {
+      totalDrivers += newDriversPerDay * 30;
+    }
+    const monthlyRevenue = totalDrivers * rides * 30 * 20 * fee;
+    data.push(monthlyRevenue);
+  }
+
+  const firstMonthDrivers = initialDrivers + (newDriversPerDay * 30);
+  const firstMonthRevenue = firstMonthDrivers * rides * 30 * 20 * fee;
+  revenueDisplay.textContent = 'Monthly Revenue Forecast: ' + formatCurrency(firstMonthRevenue);
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: data.map((_, i) => `Month ${i + 1}`),
+      datasets: [{
+        label: 'Revenue Growth Over Time',
+        data: data,
+        borderColor: '#4CAF50',
+        fill: true,
+        backgroundColor: 'rgba(76, 175, 80, 0.1)',
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: (val) => '$' + val.toLocaleString()
+          }
+        }
+      }
+    }
+  });
+}
+
+    [driversInput, newDriversInput, ridesInput, feeInput, monthsInput].forEach(input => {
+      input.addEventListener('input', calculateRevenue);
+    });
+
+    window.onload = calculateRevenue;
+  </script>
+
+</body>
+</html>

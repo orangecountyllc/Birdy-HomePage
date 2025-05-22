@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Earnings</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .slider-container {
+            margin-bottom: 20px;
+        }
+        .slider-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .slider {
+            width: 100%;
+        }
+        .output {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4CAF50;
+            text-align: center;
+        }
+        .comparison {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 2px solid #ccc;
+        }
+        .comparison div {
+            text-align: center;
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .input-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        canvas {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .slider-container-half {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .slider-container-half .slider-label {
+            width: 45%;
+        }
+    </style>
+
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Compare Your Earnings</h1>
+
+    <div class="slider-container-half">
+        <div class="slider-container">
+            <label for="rides">Number of Rides per Week:</label>
+            <input type="range" id="rides" class="slider" min="1" max="1000" value="100">
+            <span id="rides-output">100 Rides</span>
+        </div>
+
+        <div class="slider-container">
+            <label for="fare">Average Fare per Ride that Customer Pays ($):</label>
+            <input type="range" id="fare" class="slider" min="10" max="100" value="35">
+            <span id="fare-output">$35</span>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <label for="insurance-cost" class="input-label">Insurance Cost per Month ($):</label>
+        <input type="number" id="insurance-cost" class="input-field" value="300" min="0" step="1">
+    </div>
+
+    <div class="slider-container-half">
+        <div class="slider-container">
+            <label for="service-fee">Your Platform Service Fee (%):</label>
+            <input type="range" id="service-fee" class="slider" min="0" max="10" value="1">
+            <span id="service-fee-output">1%</span>
+        </div>
+
+        <div class="slider-container">
+            <label for="uber-fee">Uber/Lyft Fee Percentage (%):</label>
+            <input type="range" id="uber-fee" class="slider" min="20" max="50" value="35">
+            <span id="uber-fee-output">35%</span>
+        </div>
+    </div>
+
+    <div class="output">
+        <p><strong>Total Earnings per Week:</strong></p>
+        <p><span id="earnings">Calculating...</span></p>
+    </div>
+
+    <div class="comparison">
+        <div>
+            <h3>With Freedom (Custom Fee)</h3>
+            <p><span id="us-earnings">Calculating...</span></p>
+        </div>
+        <div>
+            <h3>With Uber/Lyft</h3>
+            <p><span id="uber-earnings">Calculating...</span></p>
+        </div>
+    </div>
+
+    <!-- New section for percent difference -->
+    <div class="output" style="margin-top: 20px;">
+        <p><strong>You earn <span id="percent-difference">Calculating...</span> more with Freedom.</strong></p>
+    </div>
+
+    <h2>Compare Earnings Visually</h2>
+    <canvas id="earningsChart"></canvas>
+</div>
+
+<script>
+    // DOM Elements
+    const ridesInput = document.getElementById('rides');
+    const fareInput = document.getElementById('fare');
+    const insuranceCostInput = document.getElementById('insurance-cost');
+    const serviceFeeInput = document.getElementById('service-fee');
+    const uberFeeInput = document.getElementById('uber-fee');
+
+    const ridesOutput = document.getElementById('rides-output');
+    const fareOutput = document.getElementById('fare-output');
+    const serviceFeeOutput = document.getElementById('service-fee-output');
+    const uberFeeOutput = document.getElementById('uber-fee-output');
+    const earningsOutput = document.getElementById('earnings');
+    const usEarningsOutput = document.getElementById('us-earnings');
+    const uberEarningsOutput = document.getElementById('uber-earnings');
+    const percentDiffOutput = document.getElementById('percent-difference');
+    const earningsChart = document.getElementById('earningsChart').getContext('2d');
+
+    // Create the Chart.js chart
+    const chart = new Chart(earningsChart, {
+        type: 'bar',
+        data: {
+            labels: ['With Freedom', 'With Uber/Lyft'],
+            datasets: [{
+                label: 'Weekly Earnings',
+                data: [0, 0], // Initial placeholder data, will be updated dynamically
+                backgroundColor: ['#4CAF50', '#FF5733'],
+                borderColor: ['#388E3C', '#C0392B'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Calculate Earnings
+    function calculateEarnings() {
+        const ridesPerWeek = parseInt(ridesInput.value);
+        const farePerRide = parseFloat(fareInput.value);
+        const insuranceCost = parseFloat(insuranceCostInput.value);
+        const serviceFeePercentage = parseFloat(serviceFeeInput.value) / 100;
+        const uberFeePercentage = parseFloat(uberFeeInput.value) / 100;
+
+        // Calculate Total Earnings
+        const totalEarnings = ridesPerWeek * farePerRide;
+        const earningsAfterUberFee = totalEarnings * (1 - uberFeePercentage) - insuranceCost;
+        const earningsAfterUsFee = totalEarnings * (1 - serviceFeePercentage) - insuranceCost;
+
+        // Update Outputs
+        ridesOutput.textContent = `${ridesPerWeek} Rides`;
+        fareOutput.textContent = `$${farePerRide}`;
+        serviceFeeOutput.textContent = `${parseInt(serviceFeeInput.value)}%`;
+        uberFeeOutput.textContent = `${parseInt(uberFeeInput.value)}%`;
+        earningsOutput.textContent = `$${(totalEarnings - insuranceCost).toFixed(2)} (before fees)`;
+        usEarningsOutput.textContent = `$${earningsAfterUsFee.toFixed(2)} (after Freedom fee)`;
+        uberEarningsOutput.textContent = `$${earningsAfterUberFee.toFixed(2)} (after Uber/Lyft fee)`;
+
+        // Calculate and display percent difference
+        const percentDifference = ((earningsAfterUsFee - earningsAfterUberFee) / earningsAfterUberFee) * 100;
+        percentDiffOutput.textContent = `${percentDifference.toFixed(1)}%`;
+
+        // Update the Chart
+        chart.data.datasets[0].data = [earningsAfterUsFee, earningsAfterUberFee];
+        chart.update();
+    }
+
+    // Event Listeners
+    ridesInput.addEventListener('input', calculateEarnings);
+    fareInput.addEventListener('input', calculateEarnings);
+    insuranceCostInput.addEventListener('input', calculateEarnings);
+    serviceFeeInput.addEventListener('input', calculateEarnings);
+    uberFeeInput.addEventListener('input', calculateEarnings);
+
+    // Initial Calculation
+    calculateEarnings();
+</script>
+
+</body>
+</html>

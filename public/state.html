@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Freedom App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<style>
+   li.override-feature::before {
+    content: none !important;
+  }
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- 
+
+INSTRUCTIONS:
+- Using html and css, create the design we shared with you on Figma.
+
+WHAT WE EXPECT FROM YOU:
+- Your code should be scalable and maintainable.
+- Your code should be component-based.
+- Your code should support all modern browsers.
+- You are completely free to use the new css features.
+-->
+
+<!-- YOUR HTML STARTS HERE -->
+
+<section class="plans__container">
+  <div class="plans">
+    <div class="plansHero">
+      <h1 class="plansHero__title">Simple, transparent pricing</h1>
+      <p class="plansHero__subtitle">No suprise fees.</p>
+    </div>
+    <div class="planItem__container">
+      <!--free plan starts -->
+      <div class="planItem planItem--free">
+
+        <div class="card">
+          <div class="card__header">
+            <div class="card__icon symbol symbol--rounded"></div>
+            <h2>Starter</h2>
+          </div>
+          <div class="card__desc"> You'll bring your own insurance based on yuor state requirements. 
+            <a href="state.html">state requiremnts</a>    
+        </div>
+        </div>
+
+        <div class="price">$10<span>/ month</span></div>
+        
+        <ul class="featureList">
+          <li>1% service fee per ride</li>
+          <li> Bring Users, Pay Less!  </li>
+          <li class="override-feature" style="margin-right: 10px;"> Refer and save! Refer to 20 riders in a week, reduce your service fee to 1% of ride fare </li>
+          <li> </li>
+          <li class="disabled">Chat support</li>
+          <li class="disabled">Mobile application</li>
+          <li class="disabled">Own analytics platform</li>
+        </ul>
+
+        <button class="button">Get Started</button>
+      </div>
+      <!--free plan ends -->
+
+
+
+
+
+
+      <!--pro plan starts -->
+      <div class="planItem planItem--pro">
+        <div class="card">
+          <div class="card__header">
+            <div class="card__icon symbol"></div>
+            <h2>Pro</h2>
+            <div class="card__label label">Best Value</div>
+          </div>
+          <div class="card__desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</div>
+        </div>
+
+        <div class="price">$18<span>/ month</span></div>
+
+        <ul class="featureList">
+          <li>2 links</li>
+          <li>Own analytics platform</li>
+          <li>Chat support</li>
+          <li class="disabled">Mobile application</li>
+          <li class="disabled">Unlimited users</li>
+        </ul>
+
+        <button class="button button--pink">Get Started</button>
+      </div>
+      <!--pro plan ends -->
+
+      <!--entp plan starts -->
+      <div class="planItem planItem--entp">
+        <div class="card">
+          <div class="card__header">
+            <div class="card__icon"></div>
+            <h2>Enterprise</h2>
+          </div>
+          <div class="card__desc">Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</div>
+        </div>
+
+        <div class="price">Let's Talk</div>
+
+        <ul class="featureList">
+          <li>2 links</li>
+          <li>Own analytics platform</li>
+          <li>Chat support</li>
+          <li>Mobile application</li>
+          <li>Unlimited users</li>
+          <li>Customize Panel</li>
+        </ul>
+
+        <button class="button button--white">Get Started</button>
+      </div>
+      <!--entp plan ends -->
+
+    </div>
+  </div>
+</section>
+<!-- partial -->
+
+
+
+<!-- YOUR HTML STARTS HERE -->
+
+<section class="plans__container">
+  <div class="plans">
+    <div class="plansHero">
+      <h1 class="plansHero__title">Simple, transparent pricing</h1>
+      <p class="plansHero__subtitle">No suprise fees.</p>
+    </div>
+    <div class="planItem__container">
+      <!--free plan starts -->
+      <div class="planItem planItem--free">
+
+        <div class="card">
+          <div class="card__header">
+            <div class="card__icon symbol symbol--rounded"></div>
+            <h2>Starter</h2>
+          </div>
+          <div class="card__desc"> You'll bring your own insurance based on your state requirements. 
+
+            Please see your state details here <a href=""></a>
+          </div>
+        </div>
+
+        <div class="price">$10<span>/ month</span></div>
+        
+        <ul class="featureList">
+          <li>1% service fee per ride</li>
+          <li> Bring Users, Pay Less!  </li>
+          <li class="override-feature" style="padding-right: 5px;"> Refer and save! Refer to 20 riders in a week, reduce your service fee to 1% of ride fare </li>
+          <li> </li>
+          <li class="disabled">Chat support</li>
+          <li class="disabled">Mobile application</li>
+          <li class="disabled">Own analytics platform</li>
+        </ul>
+
+        <button class="button">Get Started</button>
+      </div>
+      <!--free plan ends -->
+
+
+
+
+
+
+      <!--pro plan starts -->
+      <div class="planItem planItem--pro">
+        <div class="card">
+          <div class="card__header">
+            <div class="card__icon symbol"></div>
+            <h2>Pro</h2>
+            <div class="card__label label">Best Value</div>
+          </div>
+          <div class="card__desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</div>
+        </div>
+
+        <div class="price">$18<span>/ month</span></div>
+
+        <ul class="featureList">
+          <li>2 links</li>
+          <li>Own analytics platform</li>
+          <li>Chat support</li>
+          <li class="disabled">Mobile application</li>
+          <li class="disabled">Unlimited users</li>
+        </ul>
+
+        <button class="button button--pink">Get Started</button>
+      </div>
+      <!--pro plan ends -->
+
+      <!--entp plan starts -->
+      <div class="planItem planItem--entp">
+        <div class="card">
+          <div class="card__header">
+            <div class="card__icon"></div>
+            <h2>Enterprise</h2>
+          </div>
+          <div class="card__desc">Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</div>
+        </div>
+
+        <div class="price">Let's Talk</div>
+
+        <ul class="featureList">
+          <li>2 links</li>
+          <li>Own analytics platform</li>
+          <li>Chat support</li>
+          <li>Mobile application</li>
+          <li>Unlimited users</li>
+          <li>Customize Panel</li>
+        </ul>
+
+        <button class="button button--white">Get Started</button>
+      </div>
+      <!--entp plan ends -->
+
+    </div>
+  </div>
+</section>
+<!-- partial -->
+  
+</body>
+</html>
