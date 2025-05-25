@@ -7,7 +7,10 @@ To get loyal customers, find people who belive in what you belive.
 
 940 - If we could figure out the flyign machine, it will change the course of world. 
 
+
 > If we could help the riders and drivers it will end up putting $50 -$100 more in somebody's pocket & save 10-15% for the riders, and put smile on somebody's face thats worth it. 
+
+1450 - if you like control over your every aspect of your life. boy we have a product for you.  Bla bla bla. 
 
 
 

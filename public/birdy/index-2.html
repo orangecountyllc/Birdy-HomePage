@@ -154,7 +154,7 @@
   <link rel="preload" href="../themes/fonts/Nunito/Nunito-LightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
   <link rel="preload" href="../themes/fonts/Nunito/Nunito-ExtraBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />   
   <link rel="preload" href="../themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
-  <link rel="preload" href="../themes/fonts/Nunito/Nunito-ExtraLight.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="../themes/fonts/Nunito/Nunito-ExtraLight.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
   <link rel="preload" href="../themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
   <link rel="preload" href="../themes/fonts/Nunito/Nunito-SemiBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
   <link rel="preload" href="../themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
@@ -164,12 +164,12 @@
   <nav class="fixed top-0 w-full bg-white shadow-lg z-10 transition-all duration-300">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center fade-in">
-        <!-- <svg class="w-12 h-12 float-animation" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-12 h-12 float-animation" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M50 20C30 20 20 30 20 50C20 70 30 80 50 80C70 80 80 70 80 50C80 30 70 20 50 20Z" fill="#00A4B4"/>
           <path d="M60 40C60 35 55 30 50 30C45 30 40 35 40 40C40 45 45 50 50 50C55 50 60 45 60 40Z" fill="#D4A017"/>
           <path d="M45 60C45 62 47 64 50 64C53 64 55 62 55 60C55 58 53 56 50 56C47 56 45 58 45 60Z" fill="#FFFFFF"/>
           <path d="M65 45L75 50L65 55V45Z" fill="#D4A017"/>
-        </svg> -->
+        </svg>
         <span class="text-2xl font-bold text-teal ml-2">Birdy</span>
       </div>
       <div class="space-x-4">
@@ -185,16 +185,20 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="min-h-screen flex items-center justify-center hero-overlay text-white">
+  <section id="home" class="min-h-screen flex items-center justify-center bg-navy text-white hero-overlay hero-bg">
     <div class="container mx-auto px-6 text-center relative z-10">
-      
-      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 font-nunito text-gold fade-in" style="animation-delay: 0.2s;">Ride with Birdy</h1>
-      <p class="text-xl md:text-3xl mb-6 font-nunito text-white fade-in" style="animation-delay: 0.4s;">A ride-share that's fair, fun, and community-focused.</p>
-      <p class="text-xl md:text-3xl mb-6 font-nunito text-white fade-in" style="animation-delay: 0.6s;">Drivers earn $200–$400 more a week, riders save 10–15% per trip, and fares support local causes.</p>
-      <!-- <p class="text-lg md:text-xl mb-8 font-nunito text-teal fade-in" style="animation-delay: 0.8s;">Join the movement that puts drivers and riders first.</p> -->
+     
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 font-nunito text-gold fade-in" style="animation-delay: 0.2s; font-family: 'Nunito', sans-serif; font-weight: 800;">Ride with Birdy</h1>
+      <p class="text-xl md:text-3xl mb-6 font-nunito text-white fade-in" style="animation-delay: 0.4s; font-family: 'Nunito', sans-serif; font-weight: 400;">A ride-share that's fair, fun, and community-focused.</p>
+
+      <p class="text-xl md:text-3xl mb-6 font-nunito text-white fade-in" style="animation-delay: 0.4s; font-family: 'Nunito', sans-serif; font-weight: 400;"> 
+         We help drivers earn $200–$400 more a week, save riders 10–15% per trip, and round up fares to support local causes. More money, fewer fees, more smiles all around & and a greater impact.
+      </p>
+
+      <p class="text-lg md:text-xl mb-8 font-nunito text-teal fade-in" style="animation-delay: 0.6s; font-family: 'Nunito', sans-serif; font-weight: 300;">Join the movement that puts drivers and riders first.</p>
       <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-        <a href="#join" class="bg-gradient-gold text-navy px-8 py-4 rounded-full font-semibold text-lg hero-button fade-in" style="animation-delay: 1s;">Get Started</a>
-        <a href="#why-birdy" class="bg-transparent border-2 border-teal text-teal px-8 py-4 rounded-full font-semibold text-lg hero-button fade-in hover:bg-teal hover:text-white" style="animation-delay: 1.2s;">Learn More</a>
+        <a href="#join" class="bg-gradient-gold text-navy px-8 py-4 rounded-full font-semibold text-lg hero-button fade-in" style="animation-delay: 0.8s; font-family: 'Nunito', sans-serif; font-weight: 600;">Get Started</a>
+        <a href="#why-birdy" class="bg-transparent border-2 border-teal text-teal px-8 py-4 rounded-full font-semibold text-lg hero-button fade-in hover:bg-teal hover:text-white" style="animation-delay: 1s; font-family: 'Nunito', sans-serif; font-weight: 600;">Learn More</a>
       </div>
     </div>
   </section>
@@ -405,12 +409,14 @@
   <footer class="bg-navy text-white py-8">
     <div class="container mx-auto px-4 text-center">
       <div class="flex justify-center items-center mb-4">
-        <!-- <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-8 h-8" viewBox="0 
+
+0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M50 20C30 20 20 30 20 50C20 70 30 80 50 80C70 80 80 70 80 50C80 30 70 20 50 20Z" fill="#00A4B4"/>
           <path d="M60 40C60 35 55 30 50 30C45 30 40 35 40 40C40 45 45 50 50 50C55 50 60 45 60 40Z" fill="#D4A017"/>
           <path d="M45 60C45 62 47 64 50 64C53 64 55 62 55 60C55 58 53 56 50 56C47 56 45 58 45 60Z" fill="#FFFFFF"/>
           <path d="M65 45L75 50L65 55V45Z" fill="#D4A017"/>
-        </svg> -->
+        </svg>
         <span class="text-xl font-bold ml-2">Birdy</span>
       </div>
       <p>© 2025 Birdy. A cooperative ride-share company committed to fairness and community.</p>
