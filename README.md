@@ -1,3 +1,18 @@
+
+We believe in doing whats right , just happen to be working in rideshare helping riders and drivers.  
+
+
+https://youtu.be/qp0HIF3SfI4?t=465
+To get loyal customers, find people who belive in what you belive. 
+
+940 - If we could figure out the flyign machine, it will change the course of world. 
+
+> If we could help the riders and drivers it will end up putting $50 -$100 more in somebody's pocket & save 10-15% for the riders, and put smile on somebody's face thats worth it. 
+
+
+
+
+
 updated apr 21, 2025
 
 For basic/ ops :  https://eqgpi.com/boardmembers_&_dealflow/

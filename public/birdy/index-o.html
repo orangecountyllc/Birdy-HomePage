@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birdy - Your Friendly Ride-Share</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+    .bg-navy { background-color: #1A2526; }
+    .bg-beige { background-color: #F5F0E6; }
+    .text-navy { color: #1A2526; }
+    .text-teal { color: #00A4B4; }
+    .bg-teal { background-color: #00A4B4; }
+    .text-gold { color: #D4A017; }
+    .bg-gold { background-color: #D4A017; }
+    .bg-gradient-gold { background: linear-gradient(45deg, #D4A017, #F4C430); }
+    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
+    .nav-link { transition: color 0.3s ease, transform 0.3s ease; }
+    .nav-link:hover { transform: scale(1.1); }
+    details > summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+    details > summary:hover { color: #00A4B4; }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    .hero-overlay {
+      background: linear-gradient(rgba(26, 37, 38, 0.7), rgba(0, 164, 180, 0.7));
+    }
+  </style>
+</head>
+<body class="bg-beige text-navy scroll-smooth font-inter">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white shadow-lg z-10 transition-all duration-300">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center fade-in">
+        <svg class="w-12 h-12 float-animation" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 20C30 20 20 30 20 50C20 70 30 80 50 80C70 80 80 70 80 50C80 30 70 20 50 20Z" fill="#00A4B4"/>
+          <path d="M60 40C60 35 55 30 50 30C45 30 40 35 40 40C40 45 45 50 50 50C55 50 60 45 60 40Z" fill="#D4A017"/>
+          <path d="M45 60C45 62 47 64 50 64C53 64 55 62 55 60C55 58 53 56 50 56C47 56 45 58 45 60Z" fill="#FFFFFF"/>
+          <path d="M65 45L75 50L65 55V45Z" fill="#D4A017"/>
+        </svg>
+        <span class="text-2xl font-bold text-teal ml-2">Birdy</span>
+      </div>
+      <div class="space-x-4">
+        <a href="#home" class="text-navy hover:text-teal nav-link">Home</a>
+        <a href="#why-birdy" class="text-navy hover:text-teal nav-link">Why Birdy</a>
+        <a href="#drivers" class="text-navy hover:text-teal nav-link">Drivers</a>
+        <a href="#riders" class="text-navy hover:text-teal nav-link">Riders</a>
+        <a href="#founder" class="text-navy hover:text-teal nav-link">Founder's Message</a>
+        <a href="#faq" class="text-navy hover:text-teal nav-link">FAQ</a>
+        <a href="#join" class="text-navy hover:text-teal nav-link">Join Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- update following using this  -->
+
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-navy to-teal text-white hero-overlay">
+    <div class="container mx-auto px-4 text-center fade-in">
+      <svg class="w-24 h-24 mx-auto mb-4 float-animation" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 20C30 20 20 30 20 50C20 70 30 80 50 80C70 80 80 70 80 50C80 30 70 20 50 20Z" fill="#00A4B4"/>
+        <path d="M60 40C60 35 55 30 50 30C45 30 40 35 40 40C40 45 45 50 50 50C55 50 60 45 60 40Z" fill="#D4A017"/>
+        <path d="M45 60C45 62 47 64 50 64C53 64 55 62 55 60C55 58 53 56 50 56C47 56 45 58 45 60Z" fill="#FFFFFF"/>
+        <path d="M65 45L75 50L65 55V45Z" fill="#D4A017"/>
+      </svg>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Ride with Birdy</h1>
+      <p class="text-xl md:text-2xl mb-6">The ride-share revolution that's fair, fun, and community-focused.</p>
+
+      <p class="text-xl md:text-2xl mb-6"> We help drivers earn $200–$400 more a week, save riders 10–15% per trip, and round up fares to support local causes. More money, fewer fees, more smiles all around & and a greater impact.</p>
+
+      <p class="text-lg md:text-xl mb-6 font-inter text-gold fade-in" style="animation-delay: 0.6s;">Join a movement that truly puts drivers and riders first.</p>
+
+      <a href="#join" class="bg-gradient-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition duration-300">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Why Birdy Section -->
+  <section id="why-birdy" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-navy fade-in">Why Choose Birdy?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-beige p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Save More</h3>
+          <p>Rides cost 10-15% less than competitors like Uber and Lyft, with no hidden fees.</p>
+        </div>
+        <div class="bg-beige p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Driver-First</h3>
+          <p>Drivers keep 80-90% of fares, ensuring fair pay and happy drivers.</p>
+        </div>
+        <div class="bg-beige p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Top-Notch Support</h3>
+          <p>Our customer service is always here to help, 24/7, with real people, not bots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Driver Benefits Section -->
+  <section id="drivers" class="py-20 bg-beige">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-navy fade-in">Drive with Birdy</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Freedom & Transparency</h3>
+          <p>No algorithmic punishments or random deactivations. See full fare and destination before accepting rides.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Local & Flexible</h3>
+          <p>Work in your community, set availability zones, and connect with riders you prefer.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Earn More</h3>
+          <p>Keep 80-90% of fares and earn referral bonuses for recruiting drivers or riders.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Perks</h3>
+          <p>Enjoy discounts on maintenance, fuel, and tax services as a Birdy driver.</p>
+        </div>
+
+         <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Worry Free Safety Cancels</h3>
+          <p>when you canel a ride for safety reason, it wont accept your acceptance or cancellation rate.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+          <h3 class="text-xl font-semibold mb-2 text-navy">Audio recording - Added security </h3>
+          <p> You can turn it on at all times, or when you need it. </p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- update following useing this  -->
+
+  <!-- Rider Perks Section -->
+  <section id="riders" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-8 text-navy">Ride with Birdy </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-beige p-6 rounded-xl shadow-md hover-lift border border-transparent hover:border-teal transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 mr-3 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          <h3 class="text-xl font-semibold text-navy">Choose Your Driver</h3>
+        </div>
+        <p class="text-navy">Pick preferred drivers or request favorites for a personalized experience.</p>
+      </div>
+      <div class="bg-beige p-6 rounded-xl shadow-md hover-lift border border-transparent hover:border-teal transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 mr-3 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+          </svg>
+          <h3 class="text-xl font-semibold text-navy">Specialized Rides</h3>
+        </div>
+        <p class="text-navy">Options for kids, seniors, veterans, or safe late-night rides, with flexible payment methods.</p>
+      </div>
+      <div class="bg-beige p-6 rounded-xl shadow-md hover-lift border border-transparent hover:border-teal transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 mr-3 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <h3 class="text-xl font-semibold text-navy">Get Rewarded</h3>
+        </div>
+        <p class="text-navy">Earn points, achievements, and cash/credits through our rider referral system.</p>
+      </div>
+      <div class="bg-beige p-6 rounded-xl shadow-md hover-lift border border-transparent hover:border-teal transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 mr-3 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+          </svg>
+          <h3 class="text-xl font-semibold text-navy">Loyalty Perks</h3>
+        </div>
+        <p class="text-navy">Subscribe monthly for fare discounts, cash back, or priority booking.</p>
+      </div>
+
+        <div class="bg-beige p-6 rounded-xl shadow-md hover-lift border border-transparent hover:border-teal transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 mr-3 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <h3 class="text-xl font-semibold text-navy">Verify your ride with  Pin Verification </h3>
+        </div>
+        <p class="text-navy"> Now, You can also use pin verification to help you confirm that you are in the right vehicle. </p>
+      </div>
+      <div class="bg-beige p-6 rounded-xl shadow-md hover-lift border border-transparent hover:border-teal transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 mr-3 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+          </svg>
+          <h3 class="text-xl font-semibold text-navy">- -</h3>
+        </div>
+        <p class="text-navy">-- </p>
+      </div>
+
+
+    </div>
+    </div>
+  </section>
+
+
+
+  <!-- Founder's messgae  -->
+<section id="founder" class="py-16 bg-beige">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-8 text-navy">Founder's Message</h2>
+    <div class="grid grid-cols-1 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        
+          <p>
+            As a former rider and driver, I founded Birdy to address the frustrations I experienced firsthand in the rideshare industry. After over 300 trips, I saw how little drivers often earn, despite being the heart of the service. Unfair pay can lead to dissatisfied drivers, which impacts safety and service quality. At Birdy, our mission is to create a fairer system—offering savings for riders and better earnings for drivers. When drivers are valued, everyone benefits, because without them, ridesharing doesn’t exist.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 bg-beige">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-8 text-navy">Frequently Asked Questions</h2>
+      <div class="max-w-3xl mx-auto space-y-4">
+        <details class="bg-white p-4 rounded-lg shadow-md">
+          <summary class="text-lg font-semibold text-navy">How is Birdy different from Uber or Lyft?</summary>
+          <p class="mt-2 text-navy">Birdy offers 10-15% lower fares, pays drivers 80-90% of fares, and focuses on community-driven service with no algorithmic punishments. We prioritize transparency, fairness, and local connections.</p>
+        </details>
+        <details class="bg-white p-4 rounded-lg shadow-md">
+          <summary class="text-lg font-semibold text-navy">What are the benefits for drivers?</summary>
+          <p class="mt-2 text-navy">Drivers enjoy freedom from harsh penalties, full fare and destination transparency, the ability to set availability zones, referral bonuses, and perks like discounts on maintenance and fuel.</p>
+        </details>
+        <details class="bg-white p-4 rounded-lg shadow-md">
+          <summary class="text-lg font-semibold text-navy">What perks do riders get?</summary>
+          <p class="mt-2 text-navy">Riders can choose preferred drivers, access specialized rides (e.g., for kids or seniors), earn gamified rewards, and benefit from loyalty subscriptions with discounts and priority booking.</p>
+        </details>
+        <details class="bg-white p-4 rounded-lg shadow-md">
+          <summary class="text-lg font-semibold text-navy">How does Birdy support the community?</summary>
+          <p class="mt-2 text-navy">Birdy operates as a cooperative, using profits to fund community programs and offer discounted rides for low-income riders, ensuring a fair and ethical ride-share experience.</p>
+        </details>
+        <details class="bg-white p-4 rounded-lg shadow-md">
+          <summary class="text-lg font-semibold text-navy">Can I pay with cash or other methods?</summary>
+          <p class="mt-2 text-navy">Yes, Birdy offers flexible payment options, including cash rides, to accommodate all riders, especially for specialized services like late-night or senior transport.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Now Section -->
+  <section id="join" class="py-16 bg-teal text-white text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-4">Join the Birdy Flock</h2>
+      <p class="text-xl mb-6">Whether you're a driver or rider, Birdy is your community-driven ride-share solution.</p>
+      
+      <div class="flex flex-col items-center space-y-4 space-x-0 md:flex-row md:justify-center md:space-x-4 md:space-y-0">
+        <a href="#" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Sign Up as a Driver</a>
+        <a href="#" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Sign Up as a Rider</a>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <div class="flex justify-center items-center mb-4">
+        <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 20C30 20 20 30 20 50C20 70 30 80 50 80C70 80 80 70 80 50C80 30 70 20 50 20Z" fill="#00A4B4"/>
+          <path d="M60 40C60 35 55 30 50 30C45 30 40 35 40 40C40 45 45 50 50 50C55 50 60 45 60 40Z" fill="#D4A017"/>
+          <path d="M45 60C45 62 47 64 50 64C53 64 55 62 55 60C55 58 53 56 50 56C47 56 45 58 45 60Z" fill="#FFFFFF"/>
+          <path d="M65 45L75 50L65 55V45Z" fill="#D4A017"/>
+        </svg>
+        <span class="text-xl font-bold ml-2">Birdy</span>
+      </div>
+      <p>© 2025 Birdy. A cooperative ride-share company committed to fairness and community.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
