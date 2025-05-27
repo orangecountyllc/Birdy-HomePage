@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const refCode = urlParams.get('ref');
+
+      // Try to open the app
+      window.location.href = `yourapp://referral?ref=${refCode}`;
+
+      // Optional: fallback after delay
+      setTimeout(() => {
+        window.location.href = 'https://appstoreconnect.apple.com/apps/6745809453/distribution/ios/version/inflight';
+      }, 3000);
+    </script>
+  </head>
+  <body>
+    <p>Opening the app... If nothing happens, <a href="https://birdy2.netlify.app/refer">click here</a> to download.</p>
+  </body>
+</html>
