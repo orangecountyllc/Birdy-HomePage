@@ -13,33 +13,20 @@
           const appLink = `freedomapp://referral?ref=${code}`;
           window.location.href = appLink;
 
-          // 2. Call both endpoints in parallel
-          const referralData = {
-            referralCode: code,
-          };
-
-          Promise.allSettled([
-            fetch('https://xmkvtmgtwb.execute-api.us-east-1.amazonaws.com/dev/referral-track', {
+          // 2. Optional: Call backend API to store code before redirect
+          try {
+            await fetch('https://xmkvtmgtwb.execute-api.us-east-1.amazonaws.com/dev/referral-track', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(referralData)
-            }),
-            fetch('localhost:4000/referral-track', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ event: 'referral_page_visited' })
-            })
-          ])
-          .then(results => {
-            console.log('Fetch results:', results);
-          })
-          .catch(err => {
-            console.warn('One or more fetches failed:', err);
-          });
+              body: JSON.stringify({ referralCode: code })
+            });
+          } catch (err) {
+            console.warn('Failed to track referral:', err);
+          }
 
           // 3. Fallback to store/download link if app not opened in 3 seconds
           setTimeout(() => {
-            window.location.href = 'https://birdy2.netlify.app/download';
+            window.location.href = 'https://birdy2.netlify.app/download'; // or App Store / Play Store
           }, 3000);
         } else {
           document.body.innerHTML = `<h2>Invalid referral link.</h2>`;
@@ -51,3 +38,4 @@
     <p>Redirecting to the Freedom App... If nothing happens, <a href="/download">click here</a>.</p>
   </body>
 </html>
+
