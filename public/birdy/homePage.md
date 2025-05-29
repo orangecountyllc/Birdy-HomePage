@@ -17,9 +17,23 @@ OUR APP tracks if the driver's  hasn't driven away or he is staynig there, and e
 
 > If the riders who proivde their ID to the platform we will prioritize those rides bc our drivers will feel safe!!!!  ( Maybe add this feature LATER )
 
+> For security reasons like in this video 
+https://youtu.be/RmNZtiU9z6o?t=65
+
+https://www.businessinsider.com/uber-lyft-drivers-ask-riders-cancel-trips-pay-them-directly-2024-11
 
 
+We can let user drive as anonymous or pseudo name  if she wants so that drivers can't find him on social media etc. 
+image attached in this folder. 
 
+
+> Hurry up to join the 4 character club name for yoru referal code. 
+
+
+   http://goo.gl/NzfwZt
+1430 - I get email about who signedup wiht yoru referall code and how many converted. 
+20-00
+If rider isnt happy with your serivce, give them the Rides mone y or  gift card Number.
 
 
 
