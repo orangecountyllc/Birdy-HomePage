@@ -1,3 +1,9 @@
+Implement this type of design on home page,  way clear and hits it. 
+https://dave.com/
+
+
+
+
 The primary reason why you dont have best customer service with ride shaer is bc the driver isnt  getting paid enough. 
 
 
