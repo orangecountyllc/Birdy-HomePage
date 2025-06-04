@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Business Site</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" /> 
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-BoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Italic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Light.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-LightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />   
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraLight.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-SemiBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+
+  <style>
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-LightItalic.ttf') format('truetype');
+      font-weight: 300;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraBold.ttf') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf') format('truetype');
+      font-weight: 800;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraLight.ttf') format('truetype');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf') format('truetype');
+      font-weight: 200;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf') format('truetype');
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    /* Apply Nunito globally */
+    html, body {
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body class="bg-blue-50 text-black">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-2xl font-extrabold text-blue-900 tracking-tight">Birdy</a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="text-blue-900 hover:text-blue-600 font-semibold text-lg">Home</a>
+          <a href="#features" class="text-blue-900 hover:text-blue-600 font-semibold text-lg">Features</a>
+          <a href="#faq" class="text-blue-900 hover:text-blue-600 font-semibold text-lg">FAQ</a>
+          <a href="#contact" class="text-blue-900 hover:text-blue-600 font-semibold text-lg">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-blue-900 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <div class="px-4 pt-2 pb-3 space-y-1">
+        <a href="#home" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg">Home</a>
+        <a href="#features" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg">Features</a>
+        <a href="#faq" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg">FAQ</a>
+        <a href="#contact" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="py-12 sm:py-20 bg-gradient-to-r from-blue-100 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 text-center md:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-900 mb-4 tracking-tight leading-tight"> Birdie Connect   </h1>
+          <p class="text-xl sm:text-2xl font-light text-black mb-6 leading-relaxed"> A digital business card made for pro drivers — keep more of your earnings and give riders a first-class experience.</p>
+          <a href="#features" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition font-semibold text-lg shadow-md">Learn More</a>
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0">
+          <!-- <img src="./img/Landing_page.webp" alt="Hero Image" class="rounded-xl shadow-2xl w-full"> -->
+           <img src="../img/girl4.png" alt="Hero Image" class="rounded-xl shadow-2xl w-full">
+        </div> 
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Pricing Section -->
+ <section class="py-12 sm:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Intro Text and Image -->
+    <div class="mb-12 text-center">
+      <!-- <p class="text-xl sm:text-2xl font-light text-black mb-6 leading-relaxed">Manhattan. Brooklyn. Queens. The Bronx. Jersey City. Hoboken. We’ve got Ride stations all over the map, so it’s easy to get where you’re going. And back again.</p> -->
+     
+    </div>
+
+    <!-- Pricing Plans -->
+    <div class="flex flex-col sm:flex-row justify-center gap-8">
+      <!-- amet Ride Plan -->
+      <div class="text-center w-full sm:w-1/2">
+        <p class="text-sm text-gray-500 uppercase mb-2 font-semibold">Promotional Offer</p>
+        <h3 class="text-3xl font-bold text-blue-900 mb-2">Benefits For Chauffers</h3>
+        <p class="text-4xl font-extrabold text-blue-700 mb-2">$5.00/mo</p>
+        <!-- <p class="text-gray-600 mb-4 font-light">$219.99 billed annually</p> -->
+        <ul class="text-left mb-4 space-y-2 font-light text-lg max-w-md mx-auto">
+          <li class="flex items-center"><span class="mr-2">•</span> Easily grow your personal client list</li>
+          <li class="flex items-center"><span class="mr-2">•</span>   Just $10/mo, or $5/mo with 5 rider referrals  </li>
+          <li class="flex items-center"><span class="mr-2">•</span>   </li>
+             </ul>
+        <a href="#" class="inline-block bg-blue-900 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition font-semibold text-lg shadow-md">Join the list</a>
+      </div>
+      <!-- amet Ride + Epsum + Lorem Plan -->
+      <div class="text-center w-full sm:w-1/2">
+        <p class="text-sm text-purple-600 uppercase mb-2 font-semibold">Best Value</p>
+        <h3 class="text-3xl font-bold text-blue-900 mb-2"> Benefits For Riders </h3>
+        <p class="text-4xl font-extrabold text-purple-700 mb-2">$2.00/mo</p>
+        <!-- <p class="text-gray-600 mb-4 font-light">$199 billed annually</p> -->
+        <ul class="text-left mb-4 space-y-2 font-light text-lg max-w-md mx-auto">
+          <li class="flex items-center"><span class="mr-2">•</span> Build your personal list of trusted chauffeurs for reliable, on-time rides.</li>
+          <li class="flex items-center"><span class="mr-2">•</span> Choose who drives you — ideal for safety, comfort, and peace of mind. </li>
+          <li class="flex items-center"><span class="mr-2">•</span> No more Safety issues - Enjoy exceptional, personalized service and easy tipping.</li>
+          <li class="flex items-center"><span class="mr-2">•</span> The system automatically pings your preferred driver; if unavailable, book another trusted pro with one tap. </li>
+          
+        </ul>
+
+         
+
+
+        <a href="#" class="inline-block bg-purple-700 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition font-semibold text-lg shadow-md">Get the Access</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-12 sm:py-20 bg-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 text-center mb-12 tracking-tight">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">What makes your platform unique?</h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg">  It lets you personally curate your own list of top chauffeurs in the city — giving you a consistent, high-quality experience with drivers you know and trust.
+              <br/>  When you pay drivers directly, they’re often more accommodating and go the extra mile for you.
+
+            </p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">How can I get started?</h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg">Simply sign up on our website, and you'll be guided through a quick onboarding process to get started.</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">How will I know the trip cost? </h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg"> We’re just a digital business card to help you connect with top chauffeurs in the city. It’s a direct relationship — you’ll discuss trip details with your driver. If you’re unsure, you may be misunderstanding how the platform works. 
+              
+              </p>
+          </div>
+        </div>
+
+            <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">How do I pay my driver ?  </h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg"> We’re just a digital business card to help you connect with top chauffeurs in the city. It’s a direct relationship — you can use whatever like Zelle or Square or other platforms.  If you’re unsure, you may be misunderstanding how the platform works. 
+              
+              </p>
+          </div>
+        </div>
+
+
+        <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">Is there a free trial available?</h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg">Yes, we offer a 14-day free trial so you can explore all features without any commitment.</p>
+          </div>
+        </div>
+
+            <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">Is there a Customer Support available?</h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg"> Yes, we provide support via email for app issues only.  Remember we are only a digital card service, any matters between riders and drivers are handled directly between them, like neighbors helping each other. </p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-blue-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Birdy</h3>
+          <p class="font-light text-lg">Empowering your future with innovative solutions and exceptional support.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 font-light text-lg">
+            <li><a href="#home" class="hover:text-blue-300">Home</a></li>
+            <li><a href="#features" class="hover:text-blue-300">Features</a></li>
+            <li><a href="#faq" class="hover:text-blue-300">FAQ</a></li>
+            <li><a href="#contact" class="hover:text-blue-300">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+          <p class="font-light text-lg">Email: support@Birdy.com</p>
+          <p class="font-light text-lg">Phone: (123) 456-7890</p>
+          <p class="font-light text-lg">Address: 123 Innovation St, Tech City</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <p class="font-light text-lg">© 2025 Birdy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

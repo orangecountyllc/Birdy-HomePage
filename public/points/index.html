@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birdy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" /> 
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-BoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Italic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Light.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-LightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />   
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraLight.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-SemiBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+
+  <style>
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-LightItalic.ttf') format('truetype');
+      font-weight: 300;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraBold.ttf') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf') format('truetype');
+      font-weight: 800;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraLight.ttf') format('truetype');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf') format('truetype');
+      font-weight: 200;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf') format('truetype');
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    /* Apply Nunito globally */
+    html, body {
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body class="bg-blue-50 text-black">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-2xl font-extrabold text-blue-900 tracking-tight">Birdy</a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="text-blue-900 hover:text-blue-600 font-semibold text-lg">Home</a>
+          <a href="#features" class="text-blue-900 hover:text-blue-600 font-semibold text-lg">Features</a>
+          <a href="#faq" class="text-blue-900 hover:text-blue-600 font-semibold text-lg">FAQ</a>
+          <a href="#contact" class="text-blue-900 hover:text-blue-600 font-semibold text-lg">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-blue-900 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <div class="px-4 pt-2 pb-3 space-y-1">
+        <a href="#home" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg">Home</a>
+        <a href="#features" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg">Features</a>
+        <a href="#faq" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg">FAQ</a>
+        <a href="#contact" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="py-12 sm:py-20 bg-gradient-to-r from-blue-100 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 text-center md:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-900 mb-4 tracking-tight leading-tight">Welcome to Our Point system</h1>
+          <p class="text-xl sm:text-2xl font-light text-black mb-6 leading-relaxed">Discover a modern solution designed to elevate your experience with cutting-edge technology and seamless usability.</p>
+          <a href="#features" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition font-semibold text-lg shadow-md">Learn More</a>
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0">
+          <!-- <img src="./img/Landing_page.webp" alt="Hero Image" class="rounded-xl shadow-2xl w-full"> -->
+           <img src="../img/girl4.png" alt="Hero Image" class="rounded-xl shadow-2xl w-full">
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-12 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 text-center mb-12 tracking-tight">Why Choose Us?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-blue-50 p-6 rounded-3xl shadow-lg text-center transform hover:scale-105 transition">
+          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Feature 1" class="mx-auto mb-4 rounded-lg">
+          <h3 class="text-2xl font-bold text-blue-900 mb-2">Innovative Technology</h3>
+          <p class="font-light text-lg">Our platform leverages the latest advancements to deliver unparalleled performance.</p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-3xl shadow-lg text-center transform hover:scale-105 transition">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Feature 2" class="mx-auto mb-4 rounded-lg">
+          <h3 class="text-2xl font-bold text-blue-900 mb-2">User-Friendly Interface</h3>
+          <p class="font-light text-lg">Designed with simplicity in mind, ensuring a seamless experience for all users.</p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-3xl shadow-lg text-center transform hover:scale-105 transition">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Feature 3" class="mx-auto mb-4 rounded-lg">
+          <h3 class="text-2xl font-bold text-blue-900 mb-2">24/7 Support</h3>
+          <p class="font-light text-lg">Our dedicated team is always available to assist you, anytime, anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+ <section class="py-12 sm:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Intro Text and Image -->
+    <div class="mb-12 text-center">
+      <!-- <p class="text-xl sm:text-2xl font-light text-black mb-6 leading-relaxed">Manhattan. Brooklyn. Queens. The Bronx. Jersey City. Hoboken. We’ve got Ride stations all over the map, so it’s easy to get where you’re going. And back again.</p> -->
+     
+    </div>
+
+    <!-- Pricing Plans -->
+    <div class="flex flex-col sm:flex-row justify-center gap-8">
+      <!-- amet Ride Plan -->
+      <div class="text-center w-full sm:w-1/2">
+        <p class="text-sm text-gray-500 uppercase mb-2 font-semibold">NYC Only</p>
+        <h3 class="text-3xl font-bold text-blue-900 mb-2">amet Ride</h3>
+        <p class="text-4xl font-extrabold text-blue-700 mb-2">$18.33/mo</p>
+        <p class="text-gray-600 mb-4 font-light">$9.99 billed annually</p>
+        <ul class="text-left mb-4 space-y-2 font-light text-lg max-w-md mx-auto">
+          <li class="flex items-center"><span class="mr-2">•</span> Current service fee cut = 8%</li>
+          <li class="flex items-center"><span class="mr-2">•</span> For every 10 riders that install the app, you unlock unlock the service fee to 5%. </li>
+          <li class="flex items-center"><span class="mr-2">•</span> For every when a rider who actually usese the app to book the ride you add another day of unlocked service fee of 5%. </li>
+        </ul>
+        <a href="#" class="inline-block bg-blue-900 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition font-semibold text-lg shadow-md">Join amet Ride</a>
+      </div>
+      <!-- amet Ride + Epsum + Lorem Plan -->
+      <div class="text-center w-full sm:w-1/2">
+        <p class="text-sm text-purple-600 uppercase mb-2 font-semibold">Best Value</p>
+        <h3 class="text-3xl font-bold text-blue-900 mb-2"> Ride + Epsum + Lorem</h3>
+        <p class="text-4xl font-extrabold text-purple-700 mb-2">$16.58/mo</p>
+        <p class="text-gray-600 mb-4 font-light">$199 billed annually</p>
+        <ul class="text-left mb-4 space-y-2 font-light text-lg max-w-md mx-auto">
+          <li class="flex items-center"><span class="mr-2">•</span> For people:  When a delivery guy shows up, if you convince him to use diffent app, every 2nd guy to convert , you get next delviery free. </li>
+          <li class="flex items-center"><span class="mr-2">•</span> For people:  If you want to get your favorite restaurant on the app, help us get the restaurnat and we'll  give you 20 next deliveries free.  </li>
+        </ul>
+        <a href="#" class="inline-block bg-purple-700 text-white px-6 py-3 rounded-full hover:bg-purple-600 transition font-semibold text-lg shadow-md">Join Lorem Pink All Access</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-12 sm:py-20 bg-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 text-center mb-12 tracking-tight">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">What makes your platform unique?</h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg">Our platform combines cutting-edge technology with a user-centric design, ensuring both performance and ease of use.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">How can I get started?</h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg">Simply sign up on our website, and you'll be guided through a quick onboarding process to get started.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl font-bold text-blue-900">Is there a free trial available?</h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg">Yes, we offer a 14-day free trial so you can explore all our features without any commitment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-blue-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Birdy</h3>
+          <p class="font-light text-lg">Empowering your future with innovative solutions and exceptional support.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 font-light text-lg">
+            <li><a href="#home" class="hover:text-blue-300">Home</a></li>
+            <li><a href="#features" class="hover:text-blue-300">Features</a></li>
+            <li><a href="#faq" class="hover:text-blue-300">FAQ</a></li>
+            <li><a href="#contact" class="hover:text-blue-300">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+          <p class="font-light text-lg">Email: support@Birdy.com</p>
+          <p class="font-light text-lg">Phone: (123) 456-7890</p>
+          <p class="font-light text-lg">Address: 123 Innovation St, Tech City</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <p class="font-light text-lg">© 2025 Birdy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
