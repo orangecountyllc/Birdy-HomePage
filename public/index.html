@@ -101,6 +101,38 @@
       line-height: 1.6;
     }
   </style>
+
+  <!--  swiper strt -->
+      <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper CSS for pagination styling -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* Custom styles to blend Swiper with Tailwind */
+    swiper-container {
+      width: 100%;
+      height: auto;
+    }
+    swiper-slide {
+      text-align: center;
+      background: #f9fafb; /* Matches bg-gray-50 */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 400px; /* Doubled height from previous */
+      border-radius: 0.5rem; /* Matches rounded-lg */
+      padding: 1.5rem; /* Matches p-6 */
+    }
+    /* Pagination styling to match Tailwind theme */
+    .swiper-pagination-bullet {
+      background: #d1d5db; /* gray-300 */
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background: #1e3a8a; /* blue-900 */
+      opacity: 0.75;
+    }
+  </style>
+  <!-- swiper end  -->
 </head>
 <body class="bg-blue-50 text-black">
   <!-- Navbar -->
@@ -156,7 +188,7 @@
 
 
 
-  <!-- Pricing Section -->
+  <!-- start Plans -->
  <section class="py-12 sm:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Intro Text and Image -->
@@ -165,7 +197,6 @@
      
     </div>
 
-    <!-- Pricing Plans -->
     <div id="features" class="flex flex-col sm:flex-row justify-center gap-8">
       <!-- amet Ride Plan -->
       <div class="text-center w-full sm:w-1/2">
@@ -232,10 +263,11 @@
     </div>
   </div>
 </section>
+<!-- end Plans -->
 
 
 
-   <!-- Pricing Section -->
+   <!-- phone preview  Section start -->
  <section class="py-12 sm:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Intro Text and Image -->
@@ -273,6 +305,202 @@
 </section>
 
 
+<!-- reviews start  -->
+<section class="bg-white">
+ <section class="py-12 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Carousel Section -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-2">What Our Users Say</h2>
+        <p class="text-xl font-light text-gray-600 mb-8">Real feedback from our valued chauffeurs and riders</p>
+        
+        <!-- Swiper Carousel Container -->
+        <swiper-container class="mySwiper" 
+          pagination="true" 
+          pagination-clickable="true" 
+          slides-per-view="1" 
+          breakpoints='{
+            "640": {"slidesPerView": 2, "spaceBetween": 20},
+            "1024": {"slidesPerView": 3, "spaceBetween": 30}
+          }' 
+          space-between="30" 
+          grab-cursor="true" 
+          autoplay='{"delay": 5000, "disableOnInteraction": true}'>
+          <!-- Review 1 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"It’s always Greg for me. I don’t want random gig workers showing up at my house—I stick with the one I trust"</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-xl mr-3">JD</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Kelly T.</p>
+                  <p class="text-sm text-gray-500">Client, Washington DC</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <!-- Review 2 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“My guy knows I like my food hot, and he remembers exactly what I want—every time. No need to repeat myself. I always tip well, and he never lets me down.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">SM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Marcus L.</p>
+                  <p class="text-sm text-gray-500">Client, Baltimore</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <!-- Review 3 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“Never once has my order been wrong. He knows how I like it and it’s always on time. That’s why I use the same person every time.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-xl mr-3">RM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Erica P</p>
+                  <p class="text-sm text-gray-500">Erica, Richmond</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <!-- Review 4 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“I hate how regular rideshare apps just send random drivers. I want someone I know. With this, I finally get to stick with my own trusted drivers.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Tom S., Arlington.</p>
+                  <p class="text-sm text-gray-500">Client, Arlington</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+           <!-- Review 5 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“I’m sick of paying crazy prices to big rideshare apps. I’d rather just pay the driver directly and know my money is going to them.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Darnell H., Jersey City</p>
+                  <p class="text-sm text-gray-500">Client, Jersey City</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+
+           <!-- Review 6 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“I hate how regular rideshare apps just send random drivers. I want someone I know. With this, I finally get to stick with my own trusted drivers.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Tom S., Arlington.</p>
+                  <p class="text-sm text-gray-500">Client, Arlington</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+
+
+           <!-- Review 7 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">As a gig worker, I don’t have to mindlessly stare at my screen all day. I already know what my clients want and when they want it, which makes my work smooth and predictable.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Rob, Gig worker.</p>
+                  <p class="text-sm text-gray-500">Gig worker, TX</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+           <!-- Review 8 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“I love that this service eliminates surprises — no more drivers I don’t know showing up. It feels safer and more personal.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900"> — Lisa K., Rider.</p>
+                  <!-- <p class="text-sm text-gray-500">Client, Arlington</p> -->
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+           <!-- Review 9 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“It’s John here — I don’t like new gig workers I don’t know around my house, so I always stick with trusted drivers I’m familiar with.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— John, Customer.</p>
+                  <p class="text-sm text-gray-500">Client, PA</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+           <!-- Review 10 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“What I really appreciate is that I can see my gig worker’s Facebook, his family, and kids. It helps me choose someone from my own community, which builds trust.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">— SM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Sarah, Rider</p>
+                  <!-- <p class="text-sm text-gray-500">Client, Arlington</p> -->
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+
+            <!-- Review 11 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4"> “I don’t like paying 15% service fee, then 10% delivery fee, and buying my food at a higher price than if I picked it up myself. With Birdy, I get to keep most of that money in my pocket.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">— LZ</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Elizabeth., Client</p>
+                  <!-- <p class="text-sm text-gray-500">Client, Arlington</p> -->
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+
+
+            <!-- Review 10 -->
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">“All those hidden fees add up—service tax, delivery tax, inflated food prices. Birdy lets me avoid that nonsense and keeps more cash where it belongs: with me.”</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">— SM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— — Nina S., Rider</p>
+                  <!-- <p class="text-sm text-gray-500">Client, Arlington</p> -->
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+
+
+
+          
+
+        </swiper-container>
+      </div>
+    </div>
+  </section>
+  </section>
+
+<!-- reviews end -->
+
 
 
   <!-- FAQ Section -->
@@ -282,7 +510,7 @@
       <div class="space-y-4">
         <div class="bg-white rounded-lg shadow-lg">
           <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
-            <h3 class="text-2xl font-bold text-blue-900">What makes your platform unique?</h3>
+            <h3 class="text-2xl  text-blue-900">What makes this platform unique?</h3>
             <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -296,7 +524,7 @@
         </div>
         <div class="bg-white rounded-lg shadow-lg">
           <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
-            <h3 class="text-2xl font-bold text-blue-900">How can I get started?</h3>
+            <h3 class="text-2xl text-blue-900">How can I get started?</h3>
             <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -308,7 +536,7 @@
         
         <div class="bg-white rounded-lg shadow-lg">
           <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
-            <h3 class="text-2xl font-bold text-blue-900">How will I know the trip cost? </h3>
+            <h3 class="text-2xl text-blue-900">How will I know the trip cost? </h3>
             <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -322,7 +550,7 @@
 
             <div class="bg-white rounded-lg shadow-lg">
           <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
-            <h3 class="text-2xl font-bold text-blue-900">How do I pay my driver ?  </h3>
+            <h3 class="text-2xl text-blue-900">How do I pay my driver ?  </h3>
             <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -337,7 +565,7 @@
 
         <div class="bg-white rounded-lg shadow-lg">
           <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
-            <h3 class="text-2xl font-bold text-blue-900">Is there a free trial available?</h3>
+            <h3 class="text-2xl text-blue-900">Is there a free trial available?</h3>
             <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -349,7 +577,7 @@
 
             <div class="bg-white rounded-lg shadow-lg">
           <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
-            <h3 class="text-2xl font-bold text-blue-900">Is there a Customer Support available?</h3>
+            <h3 class="text-2xl text-blue-900">Is there a Customer Support available?</h3>
             <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -363,6 +591,43 @@
       </div>
     </div>
   </section>
+
+  <!-- form start  -->
+<!-- <div class="bg-blue-900 text-white py-12">
+  <form id="userInfoForm" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 items-center justify-center">
+    <input type="email" id="email" placeholder="Enter your email" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-auto" />
+    <input type="tel" id="phone" placeholder="Enter your phone number" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-auto" />
+    <button type="submit" class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded hover:bg-blue-800 transition w-full sm:w-auto">Submit</button>
+  </form>
+</div> -->
+
+<div class="bg-blue-900 text-white py-12">
+  <form id="userInfoForm" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 items-center justify-center">
+    <input type="email" id="email" placeholder="Enter your email" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-auto" />
+    
+    <input type="tel" id="phone" placeholder="Enter your phone number" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-auto" maxlength="12" />
+
+    <button type="submit" class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded hover:bg-blue-800 transition w-full sm:w-auto">Submit</button>
+  </form>
+</div>
+
+<script>
+  const phoneInput = document.getElementById('phone');
+
+  phoneInput.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, ''); // remove all non-digit characters
+
+    if (value.length > 6) {
+      value = `${value.slice(0, 3)}-${value.slice(3, 6)}-${value.slice(6, 10)}`;
+    } else if (value.length > 3) {
+      value = `${value.slice(0, 3)}-${value.slice(3)}`;
+    }
+
+    e.target.value = value;
+  });
+</script>
+
+  <!-- form end -->
 
   <!-- Footer -->
   <footer id="contact" class="bg-blue-900 text-white py-12">
@@ -408,6 +673,7 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         let currentIndex = 0;
+
         const totalItems = carousel.children.length;
         const itemsToShow = 3;
 
@@ -426,5 +692,30 @@
             updateCarousel();
         });
     </script>
+
+     <script>
+      const form = document.getElementById('userInfoForm');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log('Form submitted'); // <-- Add this line
+
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+
+        const res = await fetch('https://xmkvtmgtwb.execute-api.us-east-1.amazonaws.com/dev/save-rider', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, phone }),
+        });
+
+        const data = await res.json();
+        alert(data.message);
+      });
+</script>
+
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 </html>
