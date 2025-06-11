@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Driver Profile</title>
+  <link rel="icon" href="../static/logo/icon.jpg" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" /> 
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-BoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Italic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Light.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-LightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />   
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraLight.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-SemiBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+
+  <style>
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-LightItalic.ttf') format('truetype');
+      font-weight: 300;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes “‘’/Nunito/Nunito-ExtraBold.ttf') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf') format('truetype');
+      font-weight: 800;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraLight.ttf') format('truetype');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf') format('truetype');
+      font-weight: 200;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf') format('truetype');
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    html, body {
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-white min-h-screen">
+  <header class="bg-blue-600 text-white py-6 shadow-lg">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl font-extrabold">Edit Your Birdy Profile</h1>
+      <p class="text-lg italic mt-2">Make your profile shine for riders!</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <!-- Profile Edit Section -->
+    <section class="bg-white p-8 rounded-lg shadow-lg mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Profile Information</h2>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-blue-600">
+          <img src="../img/profile1.jpg" alt="Driver Profile Picture" id="profile-pic-preview" class="w-full h-full object-cover">
+        </div>
+        <div class="w-full">
+          <label class="block text-gray-600 font-semibold mb-2">Upload Profile Picture</label>
+          <input type="file" accept="image/*" id="profile-pic-upload" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+      </div>
+      <div class="mt-6">
+        <label for="name" class="block text-gray-600 font-semibold mb-2">Full Name</label>
+        <input type="text" id="name" value="John Doe" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+      </div>
+      <div class="mt-4">
+        <label for="tagline" class="block text-gray-600 font-semibold mb-2">Tagline</label>
+        <input type="text" id="tagline" value="Your Trusted Ride, Every Time!" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+      </div>
+      <div class="mt-4">
+        <label for="bio" class="block text-gray-600 font-semibold mb-2">About You</label>
+        <textarea id="bio" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" rows="4">With over 10 years of driving experience, John is dedicated to providing safe, reliable, and friendly rides for all his passengers.</textarea>
+      </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section class="bg-white p-8 rounded-lg shadow-lg mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Social Media & Website Links</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label for="facebook" class="block text-gray-600 font-semibold mb-2">Facebook Profile URL</label>
+          <input type="url" id="facebook" value="https://facebook.com" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="https://facebook.com/yourprofile">
+        </div>
+        <div>
+          <label for="linkedin" class="block text-gray-600 font-semibold mb-2">LinkedIn Profile URL</label>
+          <input type="url" id="linkedin" value="https://linkedin.com" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="https://linkedin.com/in/yourprofile">
+        </div>
+        <div>
+          <label for="website" class="block text-gray-600 font-semibold mb-2">Personal Website URL</label>
+          <input type="url" id="website" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="https://yourwebsite.com">
+        </div>
+      </div>
+    </section>
+
+    <!-- Family Photos Upload Section -->
+    <section class="bg-white p-8 rounded-lg shadow-lg mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Family Moments</h2>
+      <div class="mb-6">
+        <label class="block text-gray-600 font-semibold mb-2">Upload Photos</label>
+        <input type="file" accept="image/*" multiple id="photo-upload" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="photo-preview">
+        <div class="relative group">
+          <img src="https://fastly.picsum.photos/id/15/2500/1667.jpg?hmac=Lv03D1Y3AsZ9L2tMMC1KQZekBVaQSDc1waqJ54IHvo4" alt="Family Photo 1" class="w-full h-64 object-cover rounded-lg shadow-md">
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300 rounded-lg flex items-center justify-center">
+            <input type="text" value="Summer Vacation" class="text-white text-lg font-semibold bg-transparent border-b border-white text-center" placeholder="Photo Caption">
+          </div>
+        </div>
+        <div class="relative group">
+          <img src="https://picsum.photos/300/200?random=2" alt="Family Photo 2" class="w-full h-64 object-cover rounded-lg shadow-md">
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300 rounded-lg flex items-center justify-center">
+            <input type="text" value="Holiday Gathering" class="text-white text-lg font-semibold bg-transparent border-b border-white text-center" placeholder="Photo Caption">
+          </div>
+        </div>
+        <div class="relative group">
+          <img src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0" alt="Family Photo 3" class="w-full h-64 object-cover rounded-lg shadow-md">
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300 rounded-lg flex items-center justify-center">
+            <input type="text" value="My Buddy" class="text-white text-lg font-semibold bg-transparent border-b border-white text-center" placeholder="Photo Caption">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Hours Section -->
+    <section class="bg-white p-8 rounded-lg shadow-lg mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Typical Working Hours</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-4 bg-blue-50 rounded-lg">
+          <p class="font-semibold text-gray-800 mb-2">Monday - Friday</p>
+          <div class="flex gap-2">
+            <input type="time" value="07:00" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <span class="text-gray-600">to</span>
+            <input type="time" value="19:00" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+          </div>
+        </div>
+        <div class="p-4 bg-blue-50 rounded-lg">
+          <p class="font-semibold text-gray-800 mb-2">Saturday</p>
+          <div class="flex gap-2">
+            <input type="time" value="09:00" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <span class="text-gray-600">to</span>
+            <input type="time" value="17:00" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+          </div>
+        </div>
+        <div class="p-4 bg-blue-50 rounded-lg">
+          <p class="font-semibold text-gray-800 mb-2">Sunday</p>
+          <div class="flex gap-2">
+            <input type="time" value="10:00" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <span class="text-gray-600">to</span>
+            <input type="time" value="16:00" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendly Link Section -->
+    <section class="bg-white p-8 rounded-lg shadow-lg mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Calendly Link</h2>
+      <div>
+        <label for="calendly" class="block text-gray-600 font-semibold mb-2">Calendly Booking URL</label>
+        <input type="url" id="calendly" value="https://calendly.com/johndoe" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="https://calendly.com/yourprofile">
+      </div>
+    </section>
+
+    <!-- Save Button -->
+    <section class="text-center">
+      <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Save Changes</button>
+    </section>
+  </main>
+
+  <footer class="bg-blue-600 text-white py-6 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 Birdy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Profile picture preview
+    document.getElementById('profile-pic-upload').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('profile-pic-preview').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Photo upload preview (basic implementation)
+    document.getElementById('photo-upload').addEventListener('change', function(event) {
+      const previewContainer = document.getElementById('photo-preview');
+      previewContainer.innerHTML = ''; // Clear existing previews
+      const files = event.target.files;
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const div = document.createElement('div');
+          div.className = 'relative group';
+          div.innerHTML = `
+            <img src="${e.target.result}" alt="Uploaded Photo" class="w-full h-64 object-cover rounded-lg shadow-md">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300 rounded-lg flex items-center justify-center">
+              <input type="text" class="text-white text-lg font-semibold bg-transparent border-b border-white text-center" placeholder="Photo Caption">
+            </div>
+          `;
+          previewContainer.appendChild(div);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
