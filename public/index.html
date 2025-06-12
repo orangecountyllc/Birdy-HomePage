@@ -646,17 +646,112 @@
 <div class="bg-blue-900 text-white py-12">
   <div class="text-center mb-6">
     <h2 class="text-2xl font-semibold">Stay in Touch</h2>
+    <p class="text-lg font-light text-blue-200 mt-2">Join the Birdy vibe—connect with us!</p>
   </div>
-  <form id="userInfoForm" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 items-center justify-center">
-    <input type="email" id="email" placeholder="Enter your email" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-auto" />
-    
-    <input type="tel" id="phone" placeholder="Enter your phone number" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-auto" maxlength="12" />
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Desktop View: Horizontal Form -->
+    <form id="userInfoForm" class="hidden sm:flex flex-row gap-4 items-center justify-center">
+      <input type="text" id="name" placeholder="Enter your name" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-1/5 transition-all duration-300 hover:border-blue-300" />
+      <input type="email" id="email" placeholder="Enter your email" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-1/5 transition-all duration-300 hover:border-blue-300" />
+      <input type="tel" id="phone" placeholder="Enter your phone number" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-1/5 transition-all duration-300 hover:border-blue-300" maxlength="12" />
+      <input type="text" id="comment" placeholder="Your thoughts (optional)" class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-1/5 transition-all duration-300 hover:border-blue-300" />
+      <button type="submit" class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded hover:bg-blue-800 transition-all duration-300 w-full sm:w-auto shadow-md hover:shadow-lg">Submit</button>
+    </form>
+    <!-- Mobile View: Collapsible Form -->
+    <div class="sm:hidden text-center">
+      <button id="toggle-form" class="bg-blue-600 text-white font-semibold text-lg px-6 py-3 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg">Join the Flock!</button>
+      <form id="mobileUserInfoForm" class="hidden flex-col gap-4 mt-4">
+        <input type="text" id="mobile-name" placeholder="Enter your name" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full transition-all duration-300 hover:border-blue-300" />
+        <input type="email" id="mobile-email" placeholder="Enter your email" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full transition-all duration-300 hover:border-blue-300" />
+        <input type="tel" id="mobile-phone" placeholder="Enter your phone number" required class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full transition-all duration-300 hover:border-blue-300" maxlength="12" />
+        <input type="text" id="mobile-comment" placeholder="Your thoughts (optional)" class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300 w-full transition-all duration-300 hover:border-blue-300" />
+        <button type="submit" class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded hover:bg-blue-800 transition-all duration-300 w-full shadow-md hover:shadow-lg">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    // Phone number formatting for desktop
+    document.getElementById('phone').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 3 && value.length <= 6) {
+        value = value.slice(0, 3) + '-' + value.slice(3);
+      } else if (value.length > 6) {
+        value = value.slice(0, 3) + '-' + value.slice(3, 6) + '-' + value.slice(6, 10);
+      }
+      e.target.value = value;
+    });
 
-    <button type="submit" class="bg-blue-900 border border-white/30 text-white font-light text-lg px-4 py-2 rounded hover:bg-blue-800 transition w-full sm:w-auto">Submit</button>
-  </form>
+    // Phone number formatting for mobile
+    document.getElementById('mobile-phone').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 3 && value.length <= 6) {
+        value = value.slice(0, 3) + '-' + value.slice(3);
+      } else if (value.length > 6) {
+        value = value.slice(0, 3) + '-' + value.slice(3, 6) + '-' + value.slice(6, 10);
+      }
+      e.target.value = value;
+    });
+
+    // Toggle mobile form
+    document.getElementById('toggle-form').addEventListener('click', function() {
+      const form = document.getElementById('mobileUserInfoForm');
+      form.classList.toggle('hidden');
+      this.textContent = form.classList.contains('hidden') ? 'Join the Flock!' : 'Hide Form';
+      this.classList.toggle('bg-blue-600');
+      this.classList.toggle('bg-blue-800');
+    });
+
+    // Backend request for desktop form
+    document.getElementById('userInfoForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      console.log('Desktop form submitted');
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const comment = document.getElementById('comment').value;
+      try {
+        const res = await fetch('https://xmkvtmgtwb.execute-api.us-east-1.amazonaws.com/dev/save-rider', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, phone, comment }),
+        });
+        const data = await res.json();
+        alert(data.message);
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again.');
+      }
+    });
+
+    // Backend request for mobile form
+    document.getElementById('mobileUserInfoForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      console.log('Mobile form submitted');
+      const name = document.getElementById('mobile-name').value;
+      const email = document.getElementById('mobile-email').value;
+      const phone = document.getElementById('mobile-phone').value;
+      const comment = document.getElementById('mobile-comment').value;
+      try {
+        const res = await fetch('https://xmkvtmgtwb.execute-api.us-east-1.amazonaws.com/dev/save-rider', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, phone, comment }),
+        });
+        const data = await res.json();
+        alert(data.message);
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again.');
+      }
+    });
+  </script>
 </div>
 
-<script>
+<!-- <script>
   const phoneInput = document.getElementById('phone');
 
   phoneInput.addEventListener('input', (e) => {
@@ -670,7 +765,7 @@
 
     e.target.value = value;
   });
-</script>
+</script> -->
 
   <!-- form end -->
 
@@ -744,7 +839,7 @@
         });
     </script>
 
-     <script>
+     <!-- <script>
       const form = document.getElementById('userInfoForm');
 
       form.addEventListener('submit', async (e) => {
@@ -765,7 +860,7 @@
         const data = await res.json();
         alert(data.message);
       });
-</script>
+</script> -->
 
  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 

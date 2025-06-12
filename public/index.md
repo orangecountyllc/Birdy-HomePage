@@ -6,6 +6,19 @@ Free mileage tracking.  like ( other apps like para and gig something or solo ap
 include : subscrioption input box. 
 
 
+> Talk about option to pricematch for riders. Some drivers accept. 
+> write somehwer that Driver can accept cash!!!    Like you can take cashpayments, its between you and Rider. 
+> Driver can list his hobbies in profile page, so we can easily conect / talk on that topic. 
+> Let rider also maek profile    think of teh sequence,  ( let him list music or youtube lins  ) 
+
+>  Since you konw the driver, the cancellation rate is very LOW. 
+> About  page at bottom , how it started. 
+
+> Clarify to riders, if i only have 5 drivers, how do i know i'll get quick Service ?
+
+> Jay you print the QR and put it in your car. 
+> 
+
 
 
 
