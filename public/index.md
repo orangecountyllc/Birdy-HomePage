@@ -1,3 +1,9 @@
+
+
+> Put the girl image in the car, not just the girl image. 
+
+
+
 Implement this type of design on home page,  way clear and hits it. 
 https://dave.com/
 
