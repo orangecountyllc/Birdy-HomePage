@@ -20,6 +20,11 @@ I like to drive in silence.   so pelase dont try to talk to me. !!!!!   lol
 
 =====
 
+===== 
+Later  - Load google gtag on all pages. 
+
+====
+
 Add more articles of crimes of uber and lack of driver pay on the page that i before creaetd but i cant find it now. 
 may be it was reseearch.
 

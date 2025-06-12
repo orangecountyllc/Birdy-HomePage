@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birdy - Your Trusted Ride Connection</title>
+  <link rel="icon" href="../static/logo/icon.jpg" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" /> 
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-BoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Italic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-Light.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-LightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />   
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraLight.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />  
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-SemiBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  <link rel="preload" href="/themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+
+  <style>
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-LightItalic.ttf') format('truetype');
+      font-weight: 300;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraBold.ttf') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraBoldItalic.ttf') format('truetype');
+      font-weight: 800;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraLight.ttf') format('truetype');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-ExtraLightItalic.ttf') format('truetype');
+      font-weight: 200;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/themes/fonts/Nunito/Nunito-SemiBoldItalic.ttf') format('truetype');
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    html, body {
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    swiper-container {
+      width: 100%;
+      height: auto;
+    }
+    swiper-slide {
+      text-align: center;
+      background: #f9fafb;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 400px;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    swiper-slide:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    .swiper-pagination-bullet {
+      background: #d1d5db;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background: #1e3a8a;
+      opacity: 0.75;
+    }
+
+    .section-container {
+      @apply max-w-full px-4 sm:px-6 lg:px-8 w-full;
+    }
+    .hover-scale {
+      @apply transition duration-300 hover:scale-105;
+    }
+  </style>
+</head>
+<body class="bg-blue-50 text-black">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="section-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <a href="/" class="text-2xl font-extrabold text-blue-900 tracking-tight hover:text-blue-600 transition duration-300">Birdy</a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="text-blue-900 hover:text-blue-600 font-semibold text-lg transition duration-300">Home</a>
+          <a href="#features" class="text-blue-900 hover:text-blue-600 font-semibold text-lg transition duration-300">Our Story</a>
+          <a href="#faq" class="text-blue-900 hover:text-blue-600 font-semibold text-lg transition duration-300">FAQ</a>
+          <a href="#contact" class="text-blue-900 hover:text-blue-600 font-semibold text-lg transition duration-300">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-blue-900 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <div class="px-4 pt-2 pb-3 space-y-1">
+        <a href="#home" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg transition duration-300">Home</a>
+        <a href="#features" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg transition duration-300">Our Story</a>
+        <a href="#faq" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg transition duration-300">FAQ</a>
+        <a href="#contact" class="block text-blue-900 hover:text-blue-600 font-semibold text-lg transition duration-300">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="py-12 sm:py-20 bg-gradient-to-r from-blue-100 to-white">
+    <div class="section-container mx-auto">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 text-center md:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-900 mb-4 tracking-tight leading-tight">Birdy Connect</h1>
+          <p class="text-xl sm:text-2xl font-light text-gray-700 mb-6 leading-relaxed">Your digital business card for pro drivers—create lasting connections with loyal clients.</p>
+          <a href="#features" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition font-semibold text-lg shadow-md hover-scale">Discover Birdy</a>
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0">
+          <img src="../img/Driver.webp" alt="Professional driver" class="rounded-xl shadow-2xl w-full hover-scale">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-12 sm:py-20 bg-white w-full">
+    <div class="section-container mx-auto">
+      <div class="w-full">
+        <div class="text-center">
+          <p class="text-sm text-gray-500 uppercase mb-6 font-semibold">Our Story</p>
+          <h3 class="text-3xl font-bold text-blue-900 mb-8">The Heart of Birdy</h3>
+          <div class="text-left max-w-3xl mx-auto">
+            <p class="font-light text-lg text-gray-700 mb-4">When I moved to a big city, I ditched my car—traffic, parking, and fines were just too much. Rideshare apps seemed like the answer, but I quickly noticed something was off. Drivers were overworked, underpaid, and the rider-driver connection felt cold and transactional. My uncle Tony, a limo driver, showed me a better way: real relationships, fair pay, and trust.</p>
+            <p class="font-light text-lg text-gray-700 mb-4">I learned drivers often keep less than $10 from a $20 fare, and riders—especially women—craved safer, familiar options. One driver in his 60s struggled to accept tips without cash or apps like Zelle. That sparked an idea: a digital business card for drivers to share their story, availability, and build trust with riders. That’s how Birdy took flight.</p>
+            <p class="font-light text-lg text-gray-700 mb-4">With Birdy, drivers create profiles to share who they are, and riders can choose someone they trust—not a random algorithm pick. It’s about fairness, familiarity, and freedom for both sides.</p>
+            <p class="font-light text-lg text-gray-700 mb-4">Why “Birdy”? I wanted something light and warm, like a friend you’d want to ride with. “Freedom” felt too heavy, but “Birdy” captures the ease and joy of connection. It’s about cutting out middlemen and bringing back the human touch to rides.</p>
+            <p class="font-light text-lg text-gray-700 mb-4">If you’ve ever wanted to ride with the same great driver again, Birdy’s here for you. Let’s make rides personal again—together.</p>
+            <p class="font-semibold text-blue-900 mt-4">– Jay, Founder</p>
+            <a href="mailto:jay@getabirdy.com" class="text-blue-600 hover:text-blue-800 transition duration-300">jay@getabirdy.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-12 sm:py-20 bg-blue-50">
+    <div class="section-container mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 text-center mb-12 tracking-tight">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-lg shadow-lg">
+          <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+            <h3 class="text-2xl text-blue-900">Why should I use Birdy?</h3>
+            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-6">
+            <p class="font-light text-lg text-gray-700">Birdy lets drivers share their profile easily with passengers at the end of a ride. Just say, “Find me on Birdy at getbirdy.co/YourName.” Riders can view your background, social media, and story, building trust before booking you as their private driver. It’s a safer, more comfortable way to connect without sharing personal contact info.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="py-12 sm:py-20 bg-white">
+    <div class="section-container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-2">What Our Community Says</h2>
+        <p class="text-xl font-light text-gray-600 mb-8">Hear from drivers and riders who trust Birdy for better rides</p>
+        <swiper-container class="mySwiper" 
+          pagination="true" 
+          pagination-clickable="true" 
+          slides-per-view="1" 
+          breakpoints='{
+            "640": {"slidesPerView": 2, "spaceBetween": 20},
+            "1024": {"slidesPerView": 3, "spaceBetween": 30}
+          }' 
+          space-between="30" 
+          grab-cursor="true" 
+          autoplay='{"delay": 5000, "disableOnInteraction": true}'>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"I always choose Greg. I trust him, and I don’t want random drivers at my house."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-xl mr-3">JD</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Kelly T.</p>
+                  <p class="text-sm text-gray-500">Rider, Washington DC</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"My driver remembers my order perfectly every time. I tip well, and he never disappoints."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">SM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Marcus L.</p>
+                  <p class="text-sm text-gray-500">Rider, Baltimore</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"My orders are always right and on time. I stick with the same driver every time."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-xl mr-3">RM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Erica P.</p>
+                  <p class="text-sm text-gray-500">Rider, Richmond</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"I love choosing my own trusted driver instead of random ones from rideshare apps."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Tom S.</p>
+                  <p class="text-sm text-gray-500">Rider, Arlington</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"I’d rather pay my driver directly and know my money supports them, not a big app."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Darnell H.</p>
+                  <p class="text-sm text-gray-500">Rider, Jersey City</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"As a driver, Birdy lets me know my clients’ needs in advance, making my work predictable."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Rob</p>
+                  <p class="text-sm text-gray-500">Driver, TX</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"Birdy feels safer—no surprises, just drivers I know and trust."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Lisa K.</p>
+                  <p class="text-sm text-gray-500">Rider</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"I stick with trusted drivers I know, not strangers showing up at my house."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LK</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— John</p>
+                  <p class="text-sm text-gray-500">Rider, PA</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"Seeing my driver’s story and family on Birdy builds trust. I choose someone from my community."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">SM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Sarah</p>
+                  <p class="text-sm text-gray-500">Rider, Arlington</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"With Birdy, I skip the high fees and keep more money in my pocket."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">LZ</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Elizabeth</p>
+                  <p class="text-sm text-gray-500">Rider, OR</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"Birdy cuts out hidden fees. I tip my driver directly, keeping things fair."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">SM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Nina S.</p>
+                  <p class="text-sm text-gray-500">Rider, NY</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+              <p class="text-lg font-light text-gray-700 italic mb-4">"As a restaurant owner, Birdy saves me 20–30% in fees. My customers pay less, and I keep more."</p>
+              <div class="flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xl mr-3">SM</div>
+                <div>
+                  <p class="font-semibold text-blue-900">— Carlos M.</p>
+                  <p class="text-sm text-gray-500">Restaurant Owner, Nashville, TN</p>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <div class="bg-blue-900 text-white py-12">
+    <div class="section-container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Join the Birdy Community</h2>
+      <p class="text-lg font-light mb-6">Stay updated and connect with trusted drivers today!</p>
+      <form id="userInfoForm" class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <input type="email" id="email" placeholder="Enter your email" required class="bg-blue-800 border border-white/20 text-white font-light text-lg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-1/3 transition duration-300" />
+        <input type="tel" id="phone" placeholder="Enter your phone number" required class="bg-blue-800 border border-white/20 text-white font-light text-lg px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 w-full sm:w-1/3 transition duration-300" maxlength="12" />
+        <button type="submit" class="bg-blue-600 text-white font-semibold text-lg px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">Join Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-blue-900 text-white py-12">
+    <div class="section-container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Birdy</h3>
+          <p class="font-light text-lg">Smart digital cards for professional drivers—connect, share, and grow with trust.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 font-light text-lg">
+            <li><a href="#home" class="hover:text-blue-300 transition duration-300">Home</a></li>
+            <li><a href="#features" class="hover:text-blue-300 transition duration-300">Our Story</a></li>
+            <li><a href="#faq" class="hover:text-blue-300 transition duration-300">FAQ</a></li>
+            <li><a href="#contact" class="hover:text-blue-300 transition duration-300">Contact</a></li>
+            <li><a href="/privacy" class="hover:text-blue-300 transition duration-300">Privacy</a></li>
+            <li><a href="/Drivers" class="hover:text-blue-300 transition duration-300">Drivers</a></li>
+            <li><a href="/Riders" class="hover:text-blue-300 transition duration-300">Riders</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+          <p class="font-light text-lg">Email: <a href="mailto:support@Birdy.com" class="hover:text-blue-300 transition duration-300">support@Birdy.com</a></p>
+          <p class="font-light text-lg">Phone: <a href="tel:+1234567890" class="hover:text-blue-300 transition duration-300">(123) 456-7890</a></p>
+          <p class="font-light text-lg">Address: 123 Innovation St, Tech City</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <p class="font-light text-lg">Birdy connects people who already know or have met each other. By using Birdy, you agree that all users exchange digital business cards voluntarily. Ride arrangements, communications, or payments occur independently outside our platform. We do not facilitate business between individuals who haven’t previously met.</p>
+        <p class="font-light text-lg mt-4">© 2025 Birdy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 6) {
+        value = `${value.slice(0, 3)}-${value.slice(3, 6)}-${value.slice(6, 10)}`;
+      } else if (value.length > 3) {
+        value = `${value.slice(0, 3)}-${value.slice(3)}`;
+      }
+      e.target.value = value;
+    });
+
+    const form = document.getElementById('userInfoForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      try {
+        const res = await fetch('https://xmkvtmgtwb.execute-api.us-east-1.amazonaws.com/dev/save-rider', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, phone }),
+        });
+        const data = await res.json();
+        alert(data.message);
+      } catch (error) {
+        alert('Error submitting form. Please try again.');
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+</html>
