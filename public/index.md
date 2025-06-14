@@ -2,6 +2,7 @@
 
 > Put the girl image in the car, not just the girl image. 
 
+> ask grok to add social media icons at bottom of footer. 
 
 
 Implement this type of design on home page,  way clear and hits it. 
