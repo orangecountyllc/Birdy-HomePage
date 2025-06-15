@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Send OTP</title>
+  <link rel="icon" href="https://getbirdy.co/static/logo/icon.png" type="image/png" />
 </head>
 <body>
   <h2>Enter your phone number</h2>
@@ -15,14 +16,21 @@
   <script>
     document.getElementById("otpForm").addEventListener("submit", async function(e) {
       e.preventDefault();
-      const phone = document.getElementById("phone").value;
-      const res = await fetch("http://localhost:3000/send-otp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phoneNumber: phone }),
-      });
-      const data = await res.json();
-      document.getElementById("result").textContent = JSON.stringify(data);
+      const phone = document.getElementById("phone").value.trim();
+
+      try {
+        const res = await fetch("https://xmkvtmgtwb.execute-api.us-east-1.amazonaws.com/dev/sendOTP", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phoneNumber: phone }),
+        });
+
+        const data = await res.json();
+        document.getElementById("result").textContent = data.message || data.error;
+      } catch (err) {
+        document.getElementById("result").textContent = "Failed to send request.";
+        console.error(err);
+      }
     });
   </script>
 </body>
