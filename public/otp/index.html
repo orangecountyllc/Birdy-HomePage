@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send OTP</title>
+</head>
+<body>
+  <h2>Enter your phone number</h2>
+  <form id="otpForm">
+    <input type="text" id="phone" placeholder="+15555555555" required />
+    <button type="submit">Send OTP</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById("otpForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const phone = document.getElementById("phone").value;
+      const res = await fetch("http://localhost:3000/send-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phoneNumber: phone }),
+      });
+      const data = await res.json();
+      document.getElementById("result").textContent = JSON.stringify(data);
+    });
+  </script>
+</body>
+</html>
